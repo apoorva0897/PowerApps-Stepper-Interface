@@ -1,0 +1,24 @@
+Create a variable to track the current step on your screen’s OnVisible property:
+
+text
+UpdateContext({ varStep: 1 })
+
+Set the Visible property of each step container or group:
+For Step 1 container:
+text
+varStep = 1
+
+For Step 2 container:
+text
+varStep = 2
+
+For Step 3 container:
+text
+varStep = 3
+Add “Next” and “Back” buttons to navigate steps:
+
+Next button OnSelect property:
+UpdateContext({ varStep: Min(varStep + 1, 3) })
+
+Back button OnSelect property:
+UpdateContext({ varStep: Max(varStep - 1, 1) })
